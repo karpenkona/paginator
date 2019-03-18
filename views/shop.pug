@@ -20,18 +20,7 @@ p Всего страниц - #{pages}
 				li.paginator-list__item.active
 					a.paginator-list__item.nav(href='/page?page=1')
 						span 1			
-			//- if current == 1
-			//- 	li.paginator-list__item(style='visibility: hidden')
-			//- 		a.paginator-list__item.nav(href='/shops?page/1')
-			//- 			span 1
 			
-			//- else
-			//- 	li.paginator-list__item
-			//- 		a.paginator-list__item.nav(href='/shops?page/1')
-			//- 			span 1
-				//- li.paginator-list__item.prev
-				//- 	a.paginator-list__item.nav(href='/shops?page=1')
-				//- 		span 1
 			- var i = (Number(current) > 4 ? Number(current) - 3 : 2)
 			if (i !== 2)
 				li.paginator-list__item.dots ...
@@ -50,79 +39,16 @@ p Всего страниц - #{pages}
 				if (i == Number(current) + 3 & i < pages)
 					li.paginator-list__item.dots ...
 			
-			//- li.paginator-list__item
-			//- 		a.paginator-list__item.nav(href='/page?page='+pages)
-			//- 			span #{pages}
+			
 			if current != pages
 				li.paginator-list__item
 					a.paginator-list__item.nav(href='/page?page='+pages)
 						span #{pages}
 				
 				li.paginator-list__item.next
-					a.paginator-list__item.prev(href='/page?page='+(current+1))
-						span следующая			
+					a.paginator-list__item.prev(href='/page?page='+(+current+1))
+						span Следующая			
 			if current == pages
 				li.paginator-list__item.active
 					a.paginator-list__item.nav(href='/page?page='+pages)
 						span #{pages}
-			//- else
-			//- 	li.paginator-list__item
-			//- 				a.paginator-list__item(href='/page/?page='+i)
-			//- 					span #{i}
-									
-
-			
-
-
-
-			//- p -------------------------------------		
-			//- li.paginator-list__item.prev
-			//- 		a.paginator-list__item.nav(href='/shops?page=4')
-			//- 			span <-- Предыдущая
-			//- li.paginator-list__item.first.active
-			//- 	a.paginator-list__item(href='/page/?page=1')
-			//- 		span 1
-			//- li.paginator-list__item.dots.start
-			//- 	span ...
-			//- li.paginator-list__item
-			//- 	a.paginator-list__item(href='/page/?page=1')
-			//- 		span 2
-			//- li.paginator-list__item.dots
-			//- 	span ...
-			//- li.paginator-list__item.dots.end
-			//- 	span ...
-
-			//- li.paginator-list__item.next
-			//- 	a.paginator-list__item.nav(href='/shops?page=2')
-			//- 		span Следующая -->;
-//- #paginator
-//- 	//- if (pages)
-//- 	//- 	.paginator
-//- 	//- 		ul.paginator-list.start.end
-//- 	//- 			if (curent==1)
-//- 	//- 				li.paginator-list__item.first.active
-//- 	//- 				a.paginator-list__item(href='/page/?page=1')
-//- 	//- 					span 1
-
-//- if (page)
-//- 	.paginator
-//- 		ul.paginator-list.start.end
-//- 			li.paginator-list__item.prev
-//- 				a.paginator-list__item.nav(href='/shops?page=4')
-//- 					span <-- Предыдущая
-//- 			li.paginator-list__item.first.active
-//- 				a.paginator-list__item(href='/page/?page=1')
-//- 					span 1
-//- 			li.paginator-list__item.dots.start
-//- 				span ...
-//- 			li.paginator-list__item
-//- 				a.paginator-list__item(href='/page/?page=1')
-//- 					span 2
-//- 			li.paginator-list__item.dots
-//- 				span ...
-//- 			li.paginator-list__item.dots.end
-//- 				span ...
-
-//- 			li.paginator-list__item.next
-//- 				a.paginator-list__item.nav(href='/shops?page=2')
-//- 					span Следующая
